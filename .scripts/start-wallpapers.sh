@@ -8,3 +8,6 @@ RANDOM_WALLPAPER=$(ls ~/Pictures/wallpapers/ -1 | sort -R | tail -n 1)
 
 rm $WALLPAPER_TARGET
 ln $WALLPAPERS_PATH/$RANDOM_WALLPAPER $WALLPAPER_TARGET
+
+hyprpaper &
+

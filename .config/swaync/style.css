@@ -1,6 +1,6 @@
 * {
   font-size: 14px;
-  font-family: "Ubuntu Nerd Font";
+  font-family: "NotoSans Nerd Font";
   transition: 200ms;
 }
 
@@ -106,8 +106,10 @@
   color: #cdd6f4;
   padding: 14px;
   border: 2px solid #e74c3c;
+  opacity: 0.9;
 }
 
+/* Title widget */
 .control-center .widget-title {
   color: #cdd6f4;
   font-size: 1.3em;
@@ -118,7 +120,7 @@
   color: #cdd6f4;
   background-color: #313244;
   box-shadow: inset 0 0 0 1px #45475a;
-  padding: 8px;
+  padding: 4px 8px;
 }
 
 .control-center .widget-title button:hover {
@@ -132,6 +134,7 @@
   background-color: #e74c3c;
   color: #1e1e2e;
 }
+/* Title widget end */
 
 .control-center .notification-row .notification-background {
   border-radius: 7px;
@@ -290,7 +293,7 @@ trough {
 
 /* Button grid widget */
 .widget-buttons-grid {
-  padding: 8px;
+  padding: 4px;
   margin: 8px;
   border-radius: 12px;
   background-color: #313244;
@@ -302,6 +305,7 @@ trough {
   border-radius: 12px;
   transition-duration: 100ms;
   margin: 0;
+  padding: 0;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button > label {
@@ -329,6 +333,10 @@ trough {
 /* Mpris widget */
 .widget-mpris .widget-mpris-player {
   margin: 8px 0px;
+  box-shadow: none;
+}
+
+.widget-mpris .widget-mpris-player .widget-mpris-album-art {
   box-shadow: none;
 }
 
