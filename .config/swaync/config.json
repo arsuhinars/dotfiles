@@ -1,0 +1,82 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "top",
+  "control-center-layer": "top",
+  "layer-shell": true,
+  "cssPriority": "application",
+  "control-center-margin-top": 0,
+  "control-center-margin-bottom": 0,
+  "control-center-margin-right": 0,
+  "control-center-margin-left": 0,
+  "notification-2fa-action": true,
+  "notification-inline-replies": true,
+  "notification-icon-size": 48,
+  "notification-body-image-height": 100,
+  "notification-body-image-width": 200,
+  "timeout": 8,
+  "timeout-low": 5,
+  "timeout-critical": 0,
+  "fit-to-screen": true,
+  "relative-timestamps": true,
+  "control-center-width": 500,
+  "control-center-height": 600,
+  "notification-window-width": 400,
+  "keyboard-shortcuts": true,
+  "image-visibility": "when-available",
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": true,
+  "script-fail-notify": true,
+  "scripts": {
+
+  },
+  "notification-visibility": {
+    "telegram-override": {
+      "app-name": "^(telegram)$",
+      "override-urgency": "normal"
+    }
+  },
+  "widgets": [
+    "buttons-grid",
+    "title",
+    "mpris",
+    "notifications",
+    "backlight",
+    "volume"
+  ],
+  "widget-config": {
+    "buttons-grid": {
+      "actions": [
+        {
+          "label": "󰐥",
+          "command": "sh -c 'hyprctl dispatch exec wlogout && swaync-client -cp'",
+          "type": "normal"
+        },
+        {
+          "label": "󰌪",
+          "command": "sh -c '~/.scripts/powersave-switch.sh $SWAYNC_TOGGLE_STATE'",
+          "type": "toggle",
+          "active": false
+        },
+        {
+          "label": "󰒄",
+          "command": "sh -c '~/.scripts/vpn-switch.sh $SWAYNC_TOGGLE_STATE'",
+          "type": "toggle",
+          "active": false
+        }
+      ]
+    },
+    "mpris": {
+      "image-size": 48
+    },
+    "volume": {
+      "label": "󰕾" 
+    },
+    "backlight": {
+      "label": "󰃠",
+      "device": "amdgpu_bl1"
+    }
+  }
+}
