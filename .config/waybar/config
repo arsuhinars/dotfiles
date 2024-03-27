@@ -126,8 +126,23 @@
         "spacing": 10
     },
     "custom/swaync": {
-      "format": "󰍡",
-      "on-click": "swaync-client -t &",
-      "tooltip": false
+      "tooltip": false,
+      "format": "{icon}",
+      "format-icons": {
+        "notification": "<sup></sup>",
+        "none": "",
+        "dnd-notification": "<sup></sup>",
+        "dnd-none": "",
+        "inhibited-notification": "<sup></sup>",
+        "inhibited-none": "",
+        "dnd-inhibited-notification": "<sup></sup>",
+        "dnd-inhibited-none": ""
+      },
+      "return-type": "json",
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw",
+      "escape": true
     }
 }
