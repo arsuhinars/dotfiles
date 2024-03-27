@@ -1,0 +1,31 @@
+{
+    "workbench.startupEditor": "none",
+    "redhat.telemetry.enabled": false,
+    "editor.smoothScrolling": true,
+    "workbench.list.smoothScrolling": true,
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "catppuccin.accentColor": "red",
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace",
+    "window.zoomLevel": 2,
+    "editor.fontSize": 13,
+    "editor.formatOnSave": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    },
+    "isort.args": [
+        "--profile",
+        "black"
+    ],
+    "flake8.args": [
+        "--max-line-length",
+        "88",
+        "--extend-ignore",
+        "E203,E701"
+    ],
+    "terminal.integrated.enableMultiLinePasteWarning": false
+}

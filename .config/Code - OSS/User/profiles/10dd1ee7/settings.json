@@ -1,0 +1,18 @@
+{
+    "workbench.startupEditor": "none",
+    "redhat.telemetry.enabled": false,
+    "editor.smoothScrolling": true,
+    "workbench.list.smoothScrolling": true,
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "catppuccin.accentColor": "red",
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace",
+    "window.zoomLevel": 2,
+    "editor.fontSize": 13,
+    "editor.formatOnSave": true,
+    "cmake.pinnedCommands": [
+        "cmake.debugTarget"
+    ],
+    "cmake.options.statusBarVisibility": "compact",
+    "terminal.integrated.enableMultiLinePasteWarning": false
+}
