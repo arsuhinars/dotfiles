@@ -1,0 +1,14 @@
+monitor=,highres,auto,1.25
+
+xwayland {
+  force_zero_scaling = true
+}
+
+env = XCURSOR_SIZE,24
+env = QT_QPA_PLATFORMTHEME,qt6ct
+env = QT_QPA_PLATFORM,wayland
+env = GDK_BACKEND,wayland
+env = GDK_SCALE,1
+env = GDK_DPI_SCALE,1
+env = STEAM_FORCE_DESKTOPUI_SCALING,1.25
+
