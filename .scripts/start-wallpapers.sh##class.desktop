@@ -6,5 +6,3 @@ RANDOM_WALLPAPER_PATH=$(find ~/Pictures/wallpapers/ -type f | sort -R | tail -n 
 
 swww img $RANDOM_WALLPAPER_PATH
 
-systemd-run --on-calendar="*-*-* *:00:00" "~/.scripts/swww-change-wallpaper.sh"
-
