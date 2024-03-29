@@ -1,2 +1,5 @@
 ~/.scripts/var/
+~/.scripts/start-wallpapers.sh
+~/.config/hypr/monitor.conf
+~/.config/hypr/exec.conf
 
