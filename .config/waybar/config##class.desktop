@@ -1,0 +1,127 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 40,
+    "spacing": 0,
+    "modules-left": [
+        "clock",
+        "cpu",
+        "memory",
+        "disk"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "privacy",
+        "pulseaudio",
+        "hyprland/language",
+        "tray",
+        "custom/swaync"
+    ],
+    "clock": {
+        "format": "{:%H:%M %a %d %b %Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "on-click": "flatpak run org.gnome.Calendar"
+    },
+    "hyprland/workspaces": {
+        "format": "{icon} {name}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "default": ""
+        },
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 30,
+        "rewrite": {
+            "(.*) Mozilla Firefox": " $1",
+            "(.*) - OSS": " $1"
+        }
+    },
+    "privacy": {
+        "icon-spacing": 10,
+        "icon-size": 18,
+        "transition-duration": 150,
+        "modules": [
+          {
+            "type": "screenshare"
+          },
+          {
+            "type": "audio-in"
+          }
+        ]
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pavucontrol"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "disk": {
+        "format": "{percentage_used}% 󰆼",
+        "tooltip-format": "{used} used out of {total}",
+        "states": {
+          "normal": 0,
+          "warning": 75,
+          "criticial": 90
+        }
+    },
+    "hyprland/language": {
+        "format": "{} ",
+        "format-en": "EN",
+        "format-ru": "RU",
+        "keyboard-name": "telink-wireless-gaming-keyboard"
+    },
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10
+    },
+    "custom/swaync": {
+      "tooltip": false,
+      "format": "{icon}",
+      "format-icons": {
+        "notification": "<span color=\"#f38ba8\"><sup></sup></span>",
+        "none": "",
+        "dnd-notification": "󰂛<sup></sup>",
+        "dnd-none": "󰂛",
+        "inhibited-notification": "<span color=\"#f38ba8\"><sup></sup></span>",
+        "inhibited-none": "",
+        "dnd-inhibited-notification": "󰂛<sup></sup>",
+        "dnd-inhibited-none": "󰂛"
+      },
+      "return-type": "json",
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      "on-click": "swaync-client -t -sw &",
+      "escape": true
+    }
+}

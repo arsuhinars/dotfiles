@@ -2,4 +2,6 @@
 ~/.scripts/start-wallpapers.sh
 ~/.config/hypr/monitor.conf
 ~/.config/hypr/exec.conf
+~/.config/waybar/style.css
+~/.config/waybar/config
 

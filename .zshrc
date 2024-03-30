@@ -97,18 +97,17 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconf="code ~/.zshrc"
+alias zshconf="nvim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias hyprconf="code ~/.config/hypr"
-alias waybarconf="code ~/.config/waybar"
-alias woficonf="code ~/.config/wofi"
-alias idleconf="code ~/.config/swayidle/config"
+alias hyprconf="nvim ~/.config/hypr"
+alias waybarconf="nvim ~/.config/waybar"
+alias woficonf="nvim ~/.config/wofi"
+alias idleconf="nvim ~/.config/swayidle/config"
 
-# alias dotfiles='git --git-dir="$HOME/.dotfiles" --work-tree="$HOME"'
-alias idea="hyprctl dispatch exec idea"
 alias fastfetch="fastfetch --logo ~/Pictures/fastfetch/anime-logo.jpg"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias waybar-reload="killall waybar && hyprctl dispatch exec waybar"
 
 export XDG_DATA_DIRS=/var/lib/flatpak/exports/share/applications:$XDG_DATA_DIRS
 
