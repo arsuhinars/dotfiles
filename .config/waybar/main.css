@@ -1,0 +1,110 @@
+
+@define-color background #1e1e2e;
+@define-color surface #313244;
+@define-color text #cdd6f4;
+@define-color blue #89b4fa;
+@define-color teal #94e2d5;
+@define-color yellow #f9e2af;
+@define-color maroon #eba0ac;
+@define-color mauve #cba6f7;
+@define-color red #f38ba8;
+@define-color primary #74c7ec;
+
+* {
+    border: none;
+    font-family: "NotoSans Nerd Font", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0);
+    color: @text;
+}
+
+tooltip {
+    background: @background;
+    border-radius: 8px;
+    opacity: 0.8;
+}
+
+tooltip label {
+    color: @text;
+}
+
+.modules-left {
+  margin-left: 6px;
+}
+
+.modules-right {
+  margin-right: 6px;
+}
+
+.module {
+  background: alpha(@surface, 0.8);
+  border-radius: 16px;
+  padding: 4px 8px;
+  margin: 6px 3px;
+}
+
+#workspaces {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+#custom-swaync {
+  font-size: 14px;
+  padding-right: 10px;
+}
+
+@keyframes warning_blink {
+    to {
+        color: @yellow;
+    }
+}
+
+@keyframes critical_blink {
+    to {
+        color: @red;
+    }
+}
+
+#battery.warning:not(.charging) {
+    animation-name: warning_blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.critical:not(.charging) {
+    animation-name: critical_blink;
+    animation-duration: 0.25s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+button {
+    transition-property: background-color;
+    transition-duration: 0.2s;
+    border-radius: 12px;
+}
+
+button.active,
+#idle_inhibitor.activated {
+    background-color: @primary;
+}
+
+button:hover,
+#idle_inhibitor:hover {
+    background-color: shade(@primary, 1.1);
+}
+
+#idle_inhibitor {
+    min-width: 16px;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+}
+
