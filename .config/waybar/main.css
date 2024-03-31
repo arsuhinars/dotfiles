@@ -58,6 +58,11 @@ tooltip label {
   padding-right: 10px;
 }
 
+#idle_inhibitor {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 @keyframes warning_blink {
     to {
         color: @yellow;
