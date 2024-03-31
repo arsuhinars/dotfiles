@@ -63,6 +63,12 @@ tooltip label {
   padding-right: 10px;
 }
 
+#custom-start_button {
+  font-size: 16px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 @keyframes warning_blink {
     to {
         color: @yellow;
@@ -92,18 +98,22 @@ tooltip label {
 }
 
 button {
-    transition-property: background-color;
+    color: @text;
+    transition-property: background-color, color;
     transition-duration: 0.2s;
     border-radius: 12px;
 }
 
 button.active,
-#idle_inhibitor.activated {
+#idle_inhibitor.activated,
+#custom-start_button {
+    color: @surface;
     background-color: @primary;
 }
 
 button:hover,
 #idle_inhibitor:hover {
+    color: @surface;
     background-color: shade(@primary, 1.1);
 }
 

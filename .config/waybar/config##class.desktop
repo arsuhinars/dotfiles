@@ -4,6 +4,7 @@
     "height": 40,
     "spacing": 0,
     "modules-left": [
+        "custom/start_button",
         "clock",
         "cpu",
         "memory",
@@ -19,6 +20,11 @@
         "tray",
         "custom/swaync"
     ],
+    "custom/start_button": {
+        "format": "󰣇",
+        "on-click": "~/.scripts/wofi.sh --fork",
+        "toolip": false
+    },
     "clock": {
         "format": "{:%H:%M %a %d %b %Y}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
