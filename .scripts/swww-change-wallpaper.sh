@@ -9,5 +9,5 @@ TRANSITIONS="-t fade
 RANDOM_WALLPAPER_PATH=$(find /home/arsuhinars/Pictures/wallpapers/ -type f | sort -R | tail -n 1 -)
 RANDOM_TRANSITION=$(echo "$TRANSITIONS" | sort -R | tail -n 1 -)
 
-swww img $RANDOM_WALLPAPER_PATH $RANDOM_TRANSITION --transition-fps=75
+swww img $RANDOM_WALLPAPER_PATH $RANDOM_TRANSITION --transition-fps=75 --transition-step=45 -f Mitchell
 
