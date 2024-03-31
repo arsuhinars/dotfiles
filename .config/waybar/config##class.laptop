@@ -22,7 +22,7 @@
         "custom/swaync"
     ],
     "clock": {
-        "format": "{:%H:%M %a %d %b %Y}",
+        "format": "{:%H:%M %a %d.%m.%Y}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "on-click": "flatpak run org.gnome.Calendar"
     },
