@@ -58,12 +58,7 @@ tooltip label {
   padding-right: 10px;
 }
 
-#idle_inhibitor {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-#custom-start_button {
+#custom-start_button, #idle_inhibitor {
   font-size: 16px;
   padding-left: 11px;
   padding-right: 11px;

@@ -23,7 +23,7 @@
     "custom/start_button": {
         "format": "󰣇",
         "on-click": "~/.scripts/wofi.sh --fork",
-        "toolip": false
+        "tooltip": false
     },
     "clock": {
         "format": "{:%H:%M %a %d.%m.%Y}",
