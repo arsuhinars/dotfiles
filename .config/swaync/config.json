@@ -34,7 +34,7 @@
   },
   "notification-visibility": {
     "telegram-override": {
-      "app-name": "^(org\.telegram.desktop)$",
+      "app-name": "(?i)telegram",
       "override-urgency": "low"
     }
   },
