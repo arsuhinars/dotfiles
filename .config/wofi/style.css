@@ -27,7 +27,7 @@
 }
 
 #window {
-  background-color: alpha(@base, 0.9);
+  background-color: @base;
 }
 
 #outer-box {
@@ -38,7 +38,7 @@
   unset: all;
   margin-bottom: 24px;
   border-radius: 12px;
-  background: alpha(@surface0, 0.9);
+  background: @surface0;
   padding: 8px 16px;
 }
 
