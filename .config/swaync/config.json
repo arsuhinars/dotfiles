@@ -34,8 +34,8 @@
   },
   "notification-visibility": {
     "telegram-override": {
-      "app-name": "(?i)telegram",
-      "override-urgency": "low"
+      "desktop-entry": "(?i)telegram",
+      "override-urgency": "normal"
     }
   },
   "widgets": [
@@ -62,8 +62,9 @@
         },
         {
           "label": "󰒄",
-          "command": "sh -c '~/.scripts/vpn-switch.sh $SWAYNC_TOGGLE_STATE'",
+          "command": "sh -c '~/.scripts/vpn.sh set_state $SWAYNC_TOGGLE_STATE'",
           "type": "toggle",
+          "update-command": "sh -c '~/.scripts/vpn.sh get_state'",
           "active": false
         }
       ]
