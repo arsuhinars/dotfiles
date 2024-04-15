@@ -44,5 +44,6 @@ hyprpaper_start() {
 case $1 in
   ( start ) wallpaper_start;;
   ( change ) wallpaper_change;;
+  ( * ) echo Unknown command;;
 esac
 

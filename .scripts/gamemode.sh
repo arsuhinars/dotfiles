@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ $1 = 1 ]; then
+gamemode_enable() {
   hyprctl --batch "\
     keyword animations:enabled 0;\
     keyword decoration:drop_shadow 0;\
@@ -9,7 +9,17 @@ if [ $1 = 1 ]; then
     keyword general:gaps_out 0;\
     keyword general:border_size 1;\
     keyword decoration:rounding 0"
-else
+  notify-send "Gamemode enabled" -i applications-games -a gamemode
+}
+
+gamemode_disable() {
   hyprctl reload
-fi
+  notify-send "Gamemode disabled" -i applications-games -a gamemode
+}
+
+case $1 in
+  ( enable ) gamemode_enable;;
+  ( disable ) gamemode_disable;;
+  ( * ) echo Unknown command;;
+esac
 
