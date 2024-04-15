@@ -7,7 +7,7 @@ exec-once = swaync
 exec-once = swayidle -C ~/.config/swayidle/config
 exec-once = waybar
 exec-once = ~/.scripts/restore-brightness.sh
-exec-once = ~/.scripts/start-wallpapers.sh
+exec-once = ~/.scripts/wallpapers.sh start
 
 exec-once = blueman-applet
 exec-once = nm-applet
