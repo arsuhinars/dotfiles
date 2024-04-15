@@ -26,7 +26,7 @@ wallpaper_change() {
 }
 
 swww_get_random_transition() {
-  echo "$TRANSITIONS" | sort -R | tail -n 1 -
+  echo "$SWWW_TRANSITIONS" | sort -R | tail -n 1 -
 }
 
 swww_start() {
@@ -34,7 +34,7 @@ swww_start() {
 }
 
 swww_wallpaper_change() {
-  swww img $(get_random_wallpaper) $(swww_get_random_transition) --transition-fps=60 -f Mitchell
+  swww img $(get_random_wallpaper) $(swww_get_random_transition) --transition-fps=60 --transition-step 60 -f Mitchell
 }
 
 hyprpaper_start() {
