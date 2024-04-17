@@ -50,3 +50,23 @@
   color: @lavender;
 }
 
+#entry:selected {
+  background-color: alpha(@sapphire, 0.8);
+}
+
+#entry:selected #selected {
+  color: @base;
+}
+
+#entry #expander-box {
+  color: @text;
+}
+
+#entry:selected #expander-box .selected {
+  background-color: alpha(@sapphire, 0.6);
+  color: @base;
+}
+
+.drun-name {
+  margin-left: 8px;
+}
