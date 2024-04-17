@@ -6,7 +6,8 @@ exec-once = /usr/lib/polkit-kde-authentication-agent-1
 exec-once = swaync
 exec-once = swayidle -C ~/.config/swayidle/config
 exec-once = waybar
-exec-once = ~/.scripts/restore-brightness.sh
+exec-once = ~/.scripts/brightness.sh restore
+exec-once = ~/.scripts/powersave.sh restore
 exec-once = ~/.scripts/wallpapers.sh start
 
 exec-once = blueman-applet

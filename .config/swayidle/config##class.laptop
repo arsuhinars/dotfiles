@@ -1,4 +1,4 @@
-timeout 45 '~/.scripts/save-brightness.sh' resume '~/.scripts/restore-brightness.sh'
+timeout 45 '~/.scripts/brightness.sh save' resume '~/.scripts/brightness.sh restore'
 timeout 60 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on'
 timeout 300 'hyprctl dispatch exec hyprlock'
 timeout 600 'systemctl suspend'
