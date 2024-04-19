@@ -4,7 +4,7 @@ exec-once = xwaylandvideobridge
 exec-once = /usr/lib/polkit-kde-authentication-agent-1
 
 exec-once = swaync
-exec-once = swayidle -C ~/.config/swayidle/config
+exec-once = hypridle
 exec-once = waybar
 exec-once = ~/.scripts/restore-brightness.sh
 exec-once = ~/.scripts/wallpapers.sh start
