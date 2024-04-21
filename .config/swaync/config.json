@@ -57,6 +57,7 @@
         {
           "label": "󰌪",
           "command": "sh -c '~/.scripts/powersave.sh set_state $SWAYNC_TOGGLE_STATE'",
+          "update-command": "sh -c '~/.scripts/powersave.sh get_state'",
           "type": "toggle",
           "active": false
         },
