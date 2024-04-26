@@ -105,7 +105,8 @@ alias waybarconf="nvim ~/.config/waybar"
 alias woficonf="nvim ~/.config/wofi"
 alias idleconf="nvim ~/.config/swayidle/config"
 
-alias fastfetch="fastfetch --logo ~/Pictures/fastfetch/anime-logo.jpg"
+alias fastfetch="fastfetch --kitty ~/Pictures/fastfetch/anime-logo.jpg"
+alias icat="kitten icat"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias waybar-reload="killall waybar && hyprctl dispatch exec waybar"
 
