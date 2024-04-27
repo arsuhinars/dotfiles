@@ -21,7 +21,7 @@ wallpaper_start() {
 wallpaper_change() {
   case $(yadm config --get local.class) in
     ( desktop ) swww_wallpaper_change;;
-    ( laptop ) ;;
+    ( laptop ) hyprpaper_wallpaper_change;;
   esac
 }
 
@@ -37,7 +37,12 @@ swww_wallpaper_change() {
   swww img $(get_random_wallpaper) $(swww_get_random_transition) --transition-fps=60 --transition-step 60 -f Mitchell
 }
 
+hyprpaper_wallpaper_change() {
+  ln -fs $(get_random_wallpaper) ~/Pictures/active-wallpaper
+}
+
 hyprpaper_start() {
+  wallpaper_change
   hyprpaper
 }
 
