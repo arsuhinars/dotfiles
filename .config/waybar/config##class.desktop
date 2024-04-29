@@ -41,7 +41,7 @@
             "default": ""
         },
         "persistent-workspaces": {
-            "*": 5
+            "HDMI-A-2": 5
         }
     },
     "hyprland/window": {
