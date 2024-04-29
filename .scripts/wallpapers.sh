@@ -11,6 +11,11 @@ get_random_wallpaper() {
   find $WALLPAPERS_DIRECTORY -type f | sort -R | tail -n 1 -
 }
 
+set_wallpaper_file() {
+  ln -fs $1 ~/Pictures/active-wallpaper
+  magick $1 -size 1920x1080 -blur 30x10 ~/Pictures/active-wallpaper-blurred.png
+}
+
 wallpaper_start() {
   case $(yadm config --get local.class) in
     ( desktop ) swww_start;;
@@ -34,11 +39,13 @@ swww_start() {
 }
 
 swww_wallpaper_change() {
-  swww img $(get_random_wallpaper) $(swww_get_random_transition) --transition-fps=60 --transition-step 60 -f Mitchell
+  WALLPAPER_PATH="$(get_random_wallpaper)"
+  swww img $WALLPAPER_PATH $(swww_get_random_transition) --transition-fps=60 --transition-step 60 -f Mitchell
+  set_wallpaper_file $WALLPAPER_PATH
 }
 
 hyprpaper_wallpaper_change() {
-  ln -fs $(get_random_wallpaper) ~/Pictures/active-wallpaper
+  set_wallpaper_file $(get_random_wallpaper)
 }
 
 hyprpaper_start() {

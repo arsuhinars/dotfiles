@@ -3,5 +3,5 @@ Description=Changes active wallpaper to random one in swww dameon
 
 [Service]
 Type=oneshot
-ExecStart=/home/arsuhinars/.scripts/swww-change-wallpaper.sh
+ExecStart=/home/arsuhinars/.scripts/wallpapers.sh change
 

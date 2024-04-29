@@ -1,5 +1,4 @@
 exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-exec-once = cliphist
 exec-once = xwaylandvideobridge
 exec-once = /usr/lib/polkit-kde-authentication-agent-1
 

@@ -107,6 +107,7 @@ alias idleconf="nvim ~/.config/swayidle/config"
 
 alias fastfetch="fastfetch --kitty ~/Pictures/fastfetch/anime-logo.jpg"
 alias icat="kitten icat"
+alias calc="hyprctl dispatch exec 'flatpak run org.gnome.Calculator'"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias waybar-reload="killall waybar && hyprctl dispatch exec waybar"
 
