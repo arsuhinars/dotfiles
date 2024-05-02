@@ -17,6 +17,13 @@ Here is mine setup of Arch linux
 - __Cursor__ - [Bibata](https://github.com/LOSEARDES77/Bibata-Cursor-hyprcursor/) via [hyprcursor](https://github.com/hyprwm/hyprcursor)
 - __SDDM theme__ - [Catppiccin Mocha](https://github.com/catppuccin/sddm)
 - __GRUB theme__ - [Catppuccin Mocha](https://github.com/catppuccin/grub)
+- __fetch__ - [fastfetch](https://github.com/fastfetch-cli/fastfetch)
+- __Shell__ - zsh and [Oh-My-Zsh](https://ohmyz.sh/)
 
 ## Some other useful utilities
-> Coming soon
+- __Resource monitor__ - [btop](https://github.com/aristocratos/btop)
+- __Color picker__ - [hyprpicker](https://github.com/hyprwm/hyprpicker)
+- __Bluetooth applet__ - [Blueman](https://github.com/blueman-project/blueman)
+- __Network applet__ - [network-manager-applet](https://gitlab.gnome.org/GNOME/network-manager-applet)
+- __Sound applet__ - [Pavucontrol](https://freedesktop.org/software/pulseaudio/pavucontrol/)
+- > To be continued
