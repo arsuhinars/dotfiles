@@ -120,3 +120,5 @@ eval "$(pyenv virtualenv-init -)"
 # Some wine wine dlls
 export WINEPATH="/usr/x86_64-w64-mingw32/bin;/usr/lib/gcc/x86_64-w64-mingw32/13.1.0"
 
+
+source /home/arsuhinars/.config/broot/launcher/bash/br
