@@ -35,7 +35,6 @@
 }
 
 #input {
-  unset: all;
   margin-bottom: 24px;
   border-radius: 12px;
   background: @surface0;

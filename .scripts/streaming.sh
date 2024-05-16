@@ -9,30 +9,37 @@ find_headless_monitor_name() {
 }
 
 streaming_get_state() {
-  cat $STREAMING_STATE_PATH || echo false
+  [[ -e $STREAMING_STATE_PATH ]] && cat $STREAMING_STATE_PATH || echo false
 }
 
-streaming_begin() {
-  hyprctl output create headless --instance 0
-  hyprctl keyword monitor $MAIN_MONITOR_NAME,disable --instance 0
+streaming_start() {
+  if [[ $(streaming_get_state) == true ]]; then
+    echo Streaming is already enabled!
+    return 0
+  fi
+
+  hyprctl output create headless --instance 0 > /dev/null
+  hyprctl keyword monitor $MAIN_MONITOR_NAME,disable --instance 0 > /dev/null
   hyprctl --batch "\
     keyword monitor $(find_headless_monitor_name),$HEADLESS_MONITOR_PROPERTIES;\
     keyword workspace r[1-5],monitor:$(find_headless_monitor_name),default:true,persistent:true;\
-    dispatch exec sunshine" --instance 0
-  hyprctl --instance 0 seterror disable 
+    dispatch exec sunshine;\
+    dispatch dpms on" --instance 0 > /dev/null
+  hyprctl --instance 0 seterror disable > /dev/null
+  echo true > $STREAMING_STATE_PATH
 }
 
-streaming_end() {
+streaming_stop() {
   killall sunshine || echo Unable to kill sunshine
-  hyprctl output remove $(find_headless_monitor_name) --instance 0
-  hyprctl reload --instance 0
+  hyprctl output remove $(find_headless_monitor_name) --instance 0 > /dev/null
+  hyprctl reload --instance 0 > /dev/null
+  echo false > $STREAMING_STATE_PATH
 }
-
-mkdir -p ~/.scripts/var
 
 case $1 in
-  ( begin ) streaming_begin;;
-  ( end ) streaming_end;;
+  ( start ) streaming_start;;
+  ( stop ) streaming_stop;;
+  ( get_state ) streaming_get_state;;
   ( * ) echo Unknown command;;
 esac
 
