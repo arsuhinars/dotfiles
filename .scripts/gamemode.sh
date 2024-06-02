@@ -14,6 +14,7 @@ gamemode_enable() {
 
 gamemode_disable() {
   hyprctl reload
+  ~/.scripts/streaming-utils.sh update
   notify-send "Gamemode disabled" -i applications-games -a gamemode
 }
 
