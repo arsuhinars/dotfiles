@@ -12,4 +12,5 @@ exec-once = yandex-disk start
 exec-once =[workspace 4 silent] flatpak run org.telegram.desktop
 exec-once = hyprlock
 exec-once = ~/.scripts/vpn.sh disable
+exec-once = sunshine
 
