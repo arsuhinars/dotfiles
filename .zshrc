@@ -105,11 +105,12 @@ alias waybarconf="nvim ~/.config/waybar"
 alias woficonf="nvim ~/.config/wofi"
 alias idleconf="nvim ~/.config/swayidle/config"
 
-alias fastfetch="fastfetch --kitty ~/Pictures/fastfetch/anime-logo.jpg"
+alias fastfetch="fastfetch --kitty ~/Pictures/fastfetch/anime-logo.jpg --logo-width 28"
 alias icat="kitten icat"
 alias calc="hyprctl dispatch exec 'flatpak run org.gnome.Calculator'"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias waybar-reload="killall waybar && hyprctl dispatch exec waybar"
+alias vim="nvim"
 
 export XDG_DATA_DIRS=/var/lib/flatpak/exports/share/applications:$XDG_DATA_DIRS
 
