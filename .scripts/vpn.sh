@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VPN_CONNECTION_NAME="kindly_window"
+VPN_CONNECTION_NAME="cold_toad"
 
 vpn_get_state() {
   nmcli connection show --active | grep $VPN_CONNECTION_NAME -q && echo true || echo false
