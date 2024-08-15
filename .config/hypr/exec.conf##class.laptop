@@ -12,4 +12,5 @@ exec-once = blueman-applet
 exec-once = nm-applet
 exec-once = yandex-disk start
 exec-once =[workspace 4 silent] flatpak run org.telegram.desktop
+exec-once =[workspace 5 silent] obsidian
 

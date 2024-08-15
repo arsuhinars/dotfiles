@@ -6,6 +6,7 @@ SWWW_TRANSITIONS="-t fade
 -t wipe --transition-angle 135
 -t any
 -t outer"
+HYPRPAPER_MONITOR="eDP-1"
 
 get_random_wallpaper() {
   find $WALLPAPERS_DIRECTORY -type f | sort -R | tail -n 1 -
@@ -13,7 +14,7 @@ get_random_wallpaper() {
 
 set_wallpaper_file() {
   ln -fs $1 ~/Pictures/active-wallpaper
-  magick $1 -size 1920x1080 -blur 30x10 ~/Pictures/active-wallpaper-blurred.png
+  magick $1 -size 1280x720 -blur 50x16 ~/Pictures/active-wallpaper-blurred.png
 }
 
 wallpaper_start() {
@@ -45,12 +46,17 @@ swww_wallpaper_change() {
 }
 
 hyprpaper_wallpaper_change() {
-  set_wallpaper_file $(get_random_wallpaper)
+  WALLPAPER_PATH="$(get_random_wallpaper)"
+  hyprctl hyprpaper preload $WALLPAPER_PATH
+  hyprctl hyprpaper wallpaper "$HYPRPAPER_MONITOR,$WALLPAPER_PATH"
+  sleep 0.1
+  hyprctl hyprpaper unload all
+  set_wallpaper_file $WALLPAPER_PATH
 }
 
 hyprpaper_start() {
+  hyprctl dispatch exec hyprpaper
   wallpaper_change
-  hyprpaper
 }
 
 case $1 in

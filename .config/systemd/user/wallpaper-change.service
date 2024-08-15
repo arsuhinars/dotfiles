@@ -1,5 +1,5 @@
 [Unit]
-Description=Changes active wallpaper to random one in swww dameon
+Description=Changes active wallpaper to random one
 
 [Service]
 Type=oneshot
