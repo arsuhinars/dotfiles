@@ -1,0 +1,10 @@
+[Unit]
+Description=Timer to activate wallpaper-change service
+
+[Timer]
+Unit=wallpaper-change.service
+OnCalendar=*-*-* *:00:00
+
+[Install]
+WantedBy=timers.target
+
