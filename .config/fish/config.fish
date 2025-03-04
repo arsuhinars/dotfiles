@@ -14,8 +14,8 @@ set -x WINEPATH "/usr/x86_64-w64-mingw32/bin;/usr/lib/gcc/x86_64-w64-mingw32/13.
 
 set -x PYENV_ROOT "$HOME/.pyenv"
 set -x PATH $PYENV_ROOT/bin $PATH
-pyenv rehash
+set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    source (pyenv init -|psub)
 end
