@@ -12,11 +12,6 @@ get_random_wallpaper() {
   find $WALLPAPERS_DIRECTORY -type f | sort -R | tail -n 1 -
 }
 
-set_wallpaper_file() {
-  ln -fs $1 ~/Pictures/active-wallpaper
-  magick $1 -size 1280x720 -blur 50x16 ~/Pictures/active-wallpaper-blurred.png
-}
-
 wallpaper_start() {
   case $(yadm config --get local.class) in
     ( desktop ) swww_start;;
@@ -26,8 +21,8 @@ wallpaper_start() {
 
 wallpaper_change() {
   case $(yadm config --get local.class) in
-    ( desktop ) swww_wallpaper_change;;
-    ( laptop ) hyprpaper_wallpaper_change;;
+    ( desktop ) swww_wallpaper_change $1;;
+    ( laptop ) hyprpaper_wallpaper_change $1;;
   esac
 }
 
@@ -40,18 +35,16 @@ swww_start() {
 }
 
 swww_wallpaper_change() {
-  WALLPAPER_PATH="$(get_random_wallpaper)"
+  WALLPAPER_PATH="$([[ -z $1 ]] && get_random_wallpaper || echo $1)"
   swww img $WALLPAPER_PATH $(swww_get_random_transition) --transition-fps=60 --transition-step 60 -f Mitchell
-  set_wallpaper_file $WALLPAPER_PATH
 }
 
 hyprpaper_wallpaper_change() {
-  WALLPAPER_PATH="$(get_random_wallpaper)"
+  WALLPAPER_PATH="$([[ -z $1 ]] && get_random_wallpaper || echo $1)"
   hyprctl hyprpaper preload $WALLPAPER_PATH
   hyprctl hyprpaper wallpaper "$HYPRPAPER_MONITOR,$WALLPAPER_PATH"
   sleep 0.1
   hyprctl hyprpaper unload all
-  set_wallpaper_file $WALLPAPER_PATH
 }
 
 hyprpaper_start() {
@@ -61,7 +54,7 @@ hyprpaper_start() {
 
 case $1 in
   ( start ) wallpaper_start;;
-  ( change ) wallpaper_change;;
+  ( change ) wallpaper_change $2;;
   ( * ) echo Unknown command;;
 esac
 
