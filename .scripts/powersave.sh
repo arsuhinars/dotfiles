@@ -17,7 +17,10 @@ powersave_set_state() {
 powersave_enable() {
   hyprctl --batch "\
     keyword decoration:drop_shadow 0;\
-    keyword decoration:blur:enabled 0"
+    keyword decoration:blur:enabled 0;\
+    keyword animations:enabled 0;\
+    keyword windowrule opacity 1 override 1 override 1 override, ^(.*)$\
+  "
   xbacklight -set 20
   echo true > $POWERSAVE_STATE_PATH
 }
